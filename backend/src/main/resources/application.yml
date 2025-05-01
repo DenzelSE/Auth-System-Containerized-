@@ -1,18 +1,15 @@
-server:
-  error:
-    include-message: always
-    inlucde-binding-error: always
   
 spring:
   datasource:
-    password:
-    url:jdbc: postgresql://localhost:5432/registration
-    username: 
+    url: jdbc:postgresql://localhost:5432/registration
+    username:
+    driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: create-drop
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgresSQLDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
