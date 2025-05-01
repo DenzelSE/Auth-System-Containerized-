@@ -3,7 +3,9 @@ package com.denzel.Auth.System.security.config;
 import org.hibernate.jdbc.Expectations;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
@@ -45,5 +47,14 @@ public class WebSecurityConfig {
         provider.setUserDetailsService(appUserService);
         return provider;
     }
+
+    @Bean
+    public AuthenticationManager authManager(HttpSecurity http, DaoAuthenticationProvider authProvider)
+                throws Exception{
+                    return http.getSharedObject(AuthenticationManagerBuilder.class)
+                                .authenticationProvider(authProvider)
+                                .build();
+                }
+
 
 }
