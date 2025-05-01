@@ -25,7 +25,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 
-public class AppUsser implements UserDetails {
+public class AppUser implements UserDetails {
 
     @Id
     @SequenceGenerator(
@@ -50,7 +50,7 @@ public class AppUsser implements UserDetails {
     private Boolean enabled;
     
 
-    public AppUsser(String name, String username, String email, String password, AppUserRole appUserRole,
+    public AppUser(String name, String username, String email, String password, AppUserRole appUserRole,
             Boolean locked, Boolean enabled) {
         this.name = name;
         this.username = username;
