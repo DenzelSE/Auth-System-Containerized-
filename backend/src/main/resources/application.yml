@@ -1,15 +1,14 @@
-  
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/registration
-    username:
-    driver-class-name: org.postgresql.Driver
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 50MB
 
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-    show-sql: true
+springdoc:
+  default-produces-media-type: application/json
+
+
+server:
+  servelet:
+    context-path: /api/v1/
