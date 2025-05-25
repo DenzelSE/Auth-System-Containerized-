@@ -33,8 +33,9 @@ public class SecurityConfig {
         .cors(withDefaults())
         .csrf(AbstractHttpConfigurer::disable)
         .authorizeHttpRequests(req -> req.securityMatchers(
-            "",
-            ""
+                    "/api/auth/**",   
+                    "/swagger-ui/**",
+                    "/v3/api-docs/**"
         ).permitAll().anyRequest().Authenticated())
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authenticationProvider(authenticationProvider)
