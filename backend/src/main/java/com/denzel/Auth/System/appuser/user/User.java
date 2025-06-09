@@ -4,7 +4,6 @@ import java.security.Principal;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.data.annotation.CreatedDate;
