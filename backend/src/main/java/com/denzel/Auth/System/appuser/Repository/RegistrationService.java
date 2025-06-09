@@ -11,7 +11,10 @@ import com.denzel.Auth.System.appuser.user.User;
 import com.denzel.Auth.System.registration.RegistrationRequest;
 import com.denzel.Auth.System.security.PasswordEncoder;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class RegistrationService {
 private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
@@ -48,7 +51,6 @@ private final RoleRepository roleRepository;
                         .expiresAt(LocalDateTime.now().plusMinutes(15))
                         .user(user)
                         .build();
-
             tokenRepository.save(token);
         return generatedToken;
     }
