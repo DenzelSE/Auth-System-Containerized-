@@ -30,3 +30,22 @@ spring:
           connectiontimeout: 5000
           timeout: 3000
           writetimeout: 5000
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: your-email@gmail.com
+    password: your-app-password
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+
+application:
+  security:
+    jwt:
+      secret-key: ae088d3b23cf5f2256b6dcf1e56358de0b6bc01b1c09c743bc57d9c02d734bdd
+      expiration: 8640000
+  mailing:
+    frontend:
+      actication_url: http://localhost4200/activate-account
+server:
+  port: 8088

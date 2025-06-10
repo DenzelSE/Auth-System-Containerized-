@@ -4,7 +4,6 @@ import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +12,6 @@ import com.denzel.Auth.System.Repository.TokenRepository;
 import com.denzel.Auth.System.Repository.UserRepository;
 import com.denzel.Auth.System.email.EmailService;
 import com.denzel.Auth.System.email.EmailTemplateName;
-import com.denzel.Auth.System.registration.RegistrationRequest;
 import com.denzel.Auth.System.user.Token;
 import com.denzel.Auth.System.user.User;
 
