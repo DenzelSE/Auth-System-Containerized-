@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.denzel.Auth.System.Repository.UserRepository;
+import com.denzel.Auth.System.user.UserRepository;
 
 import jakarta.transaction.Transactional;
 
