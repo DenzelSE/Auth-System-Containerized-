@@ -1,10 +1,10 @@
-package com.denzel.Auth.System.appuser.Repository;
+package com.denzel.Auth.System.Repository;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.denzel.Auth.System.appuser.role.Role;
+import com.denzel.Auth.System.role.Role;
 
 public interface RoleRepository extends JpaRepository<Role, Integer>{
     

@@ -1,4 +1,4 @@
-package com.denzel.Auth.System.appuser.user;
+package com.denzel.Auth.System.user;
 
 import java.time.LocalDateTime;
 

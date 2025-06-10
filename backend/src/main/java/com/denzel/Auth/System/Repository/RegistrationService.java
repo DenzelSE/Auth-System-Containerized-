@@ -1,4 +1,4 @@
-package com.denzel.Auth.System.appuser.Repository;
+package com.denzel.Auth.System.Repository;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
@@ -6,10 +6,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.denzel.Auth.System.appuser.user.Token;
-import com.denzel.Auth.System.appuser.user.User;
 import com.denzel.Auth.System.registration.RegistrationRequest;
-import com.denzel.Auth.System.security.PasswordEncoder;
+import com.denzel.Auth.System.security2.PasswordEncoder;
+import com.denzel.Auth.System.user.Token;
+import com.denzel.Auth.System.user.User;
 
 import lombok.RequiredArgsConstructor;
 

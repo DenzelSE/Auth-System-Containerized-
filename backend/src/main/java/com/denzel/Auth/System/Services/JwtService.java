@@ -1,4 +1,4 @@
-package com.denzel.Auth.System.appuser.Services;
+package com.denzel.Auth.System.Services;
 
 import java.security.Key;
 import java.util.Date;

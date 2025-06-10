@@ -1,10 +1,10 @@
-package com.denzel.Auth.System.appuser.security;
+package com.denzel.Auth.System.security;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.denzel.Auth.System.appuser.Repository.UserRepository;
+import com.denzel.Auth.System.Repository.UserRepository;
 
 import jakarta.transaction.Transactional;
 

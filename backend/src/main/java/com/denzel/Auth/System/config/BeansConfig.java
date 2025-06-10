@@ -1,4 +1,4 @@
-package com.denzel.Auth.System.appuser.config;
+package com.denzel.Auth.System.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

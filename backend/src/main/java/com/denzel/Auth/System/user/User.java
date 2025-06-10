@@ -1,4 +1,4 @@
-package com.denzel.Auth.System.appuser.user;
+package com.denzel.Auth.System.user;
 
 import java.security.Principal;
 import java.time.LocalDate;
@@ -13,7 +13,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.denzel.Auth.System.appuser.role.Role;
+import com.denzel.Auth.System.role.Role;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

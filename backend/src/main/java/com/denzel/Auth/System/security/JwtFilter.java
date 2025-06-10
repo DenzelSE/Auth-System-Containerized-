@@ -1,4 +1,4 @@
-package com.denzel.Auth.System.appuser.security;
+package com.denzel.Auth.System.security;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Service;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.denzel.Auth.System.appuser.Services.JwtService;
+import com.denzel.Auth.System.Services.JwtService;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

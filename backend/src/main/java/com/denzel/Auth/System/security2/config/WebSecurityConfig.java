@@ -1,4 +1,4 @@
-package com.denzel.Auth.System.security.config;
+package com.denzel.Auth.System.security2.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import com.denzel.Auth.System.appuser.Services.AppUserService;
+import com.denzel.Auth.System.Services.AppUserService;
+
 import static org.springframework.security.config.Customizer.withDefaults;
 
 import lombok.AllArgsConstructor;

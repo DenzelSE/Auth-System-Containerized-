@@ -1,11 +1,11 @@
-package com.denzel.Auth.System.appuser.Services;
+package com.denzel.Auth.System.Services;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.denzel.Auth.System.appuser.Repository.UserRepository;
+import com.denzel.Auth.System.Repository.UserRepository;
 
 @Service
 public class AppUserService implements UserDetailsService {

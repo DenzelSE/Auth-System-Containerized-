@@ -1,4 +1,4 @@
-package com.denzel.Auth.System.appuser.role;
+package com.denzel.Auth.System.role;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import com.denzel.Auth.System.appuser.user.User;
+import com.denzel.Auth.System.user.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
