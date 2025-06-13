@@ -12,6 +12,7 @@ import org.thymeleaf.spring6.SpringTemplateEngine;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import static org.springframework.mail.javamail.MimeMessageHelper.MULTIPART_MODE_MIXED;
 
@@ -19,6 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 
 public class EmailService {
@@ -30,13 +32,15 @@ public class EmailService {
     @Async
 
     public void sendEmail( 
-        String to, String username,
+        String to, 
+        String username,
         EmailTemplateName emailTemplate,
-        String confimationUrl, String activationCode,
+        String confimationUrl, 
+        String activationCode,
         String subject  
         ) throws MessagingException{
             String templateName;
-            if(emailTemplate ==null){
+            if(emailTemplate == null){
                 templateName = "confirm-email";
             }else{
                 templateName = emailTemplate.name();

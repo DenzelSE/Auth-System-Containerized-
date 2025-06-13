@@ -27,7 +27,7 @@ public class AuthenticationService {
     private final UserRepository userRepository;
     private final TokenRepository tokenRepository;
     private final EmailService emailService;
-    private String activationUrl = "http://localhost4200/activate-account" ;
+    private String activationUrl = "http://localhost:4200/activate-account" ;
 
     public void register(RegistrationRequest request) throws MessagingException {
         var userRole = roleRepository.findByName("USER")
@@ -37,7 +37,7 @@ public class AuthenticationService {
         .firstname(request.getFirstname())
         .lastname(request.getLastname())
         .email(request.getEmail())
-        .password("")
+        .password(passwordEncoder.encode(request.getPassword()))
         .accoutnLocked(false)
         .enabled(false)
         .roles(List.of(userRole))
@@ -47,11 +47,19 @@ public class AuthenticationService {
         }
         
     private void sendValidationEmail(User user) throws MessagingException {
+
         var newToken = generateAndSaveActivationToken(user);
-        emailService.sendEmail(user.getEmail(), user.fullname(),EmailTemplateName.ACTIVATE_ACCOUNT, activationUrl, newToken, "Acoount_activation");
+
+        emailService.sendEmail(user.getEmail(), 
+                                user.fullname(),
+                                EmailTemplateName.ACTIVATE_ACCOUNT, 
+                                activationUrl, 
+                                newToken, 
+                                "Account activation");
         }
     
     private String generateAndSaveActivationToken(User user){
+        
         String generatedToken = generateActivationCode(6);
         var token = Token.builder()
                         .token(generatedToken)
