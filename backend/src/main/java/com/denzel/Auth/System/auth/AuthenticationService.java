@@ -2,8 +2,11 @@ package com.denzel.Auth.System.auth;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +17,10 @@ import com.denzel.Auth.System.user.Token;
 import com.denzel.Auth.System.user.TokenRepository;
 import com.denzel.Auth.System.user.User;
 import com.denzel.Auth.System.user.UserRepository;
+import com.denzel.Auth.System.security.JwtService;
 
 import jakarta.mail.MessagingException;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -27,6 +32,8 @@ public class AuthenticationService {
     private final UserRepository userRepository;
     private final TokenRepository tokenRepository;
     private final EmailService emailService;
+    private final AuthenticationManager authenticationManager;
+    private final JwtService jwtService; 
     private String activationUrl = "http://localhost:4200/activate-account" ;
 
     public void register(RegistrationRequest request) throws MessagingException {
@@ -85,6 +92,17 @@ public class AuthenticationService {
         }
         
         return codeBuilder.toString();
+    }
+
+    public AuthenticationResponse authenticate(AuthenticationResquest request) {
+        var auth = authenticationManager.authenticate(
+            new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
+        ); 
+        var claims = new HashMap<String, Object>();
+        var user = ((User)auth.getPrincipal());
+        claims.put("fullname", user.fullname());
+        var jwtToken = jwtService.generateToken(claims, user);
+        return AuthenticationResponse.builder().token(jwtToken).build();
     }
 
 }
