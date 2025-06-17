@@ -31,13 +31,15 @@ spring:
           timeout: 3000
           writetimeout: 5000
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username: denzelselokela@gmail.com
-    password: password11
+    host: localhost
+    port: 1025
+    username: ""
+    password: ""
     properties:
-      mail.smtp.auth: true
-      mail.smtp.starttls.enable: true
+      mail.smtp.auth: false
+      mail.smtp.starttls.enable: false
+    protocol: smtp
+    test-connection: false
 
 application:
   security:
